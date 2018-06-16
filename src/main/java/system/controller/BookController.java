@@ -32,13 +32,9 @@ public class BookController {
         modelAndView.addObject("book", new Book());
 
         List<Book> list;
-        boolean filter = false;
-        if(readAlready != null){
-            filter = getFilter(readAlready);
-        }
 
-        if (readAlready != null){
-            list = bookService.getBooksList(filter);
+        if (readAlready != null && !readAlready.isEmpty()){
+            list = bookService.getBooksList(getFilter(readAlready));
         }else {
             if(lookFor != null){
                 list = bookService.getBookList(lookFor);

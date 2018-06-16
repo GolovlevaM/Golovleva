@@ -54,6 +54,7 @@
             </th>
 
             <th width="200" class="w3-container w3-right">
+                <br>
         <a class="w3-btn w3-blue-grey w3-round-large" href="add">Add New Book</a>
             </th>
         </tr>
@@ -103,7 +104,7 @@
             <c:forEach begin="1" end="${pageCount}" step="1" varStatus="i">
                 <c:choose>
                     <c:when test="${page == i.index}">
-                        <a class="w3-button w3-green">${i.index}</a>
+                        <a class="w3-button w3-blue-grey">${i.index}</a>
                     </c:when>
                     <c:otherwise>
                         <c:url value="/" var="url">

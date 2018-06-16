@@ -54,9 +54,11 @@ public class BookService {
     }
 
     public List getBookList(String lookFor){
+        lookFor = lookFor.toLowerCase();
         List list = new ArrayList();
         for (Book book : bookDao.getBooksList()){
-            if(book.getAuthor().contains(lookFor) || book.getTitle().contains(lookFor) || book.getDescription().contains(lookFor)){
+            if(book.getAuthor().toLowerCase().contains(lookFor) || book.getTitle().toLowerCase().contains(lookFor)
+                    || book.getDescription().toLowerCase().contains(lookFor)){
                 list.add(book);
             }
         }
